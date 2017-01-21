@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AssistMe</string>
+    <string name="facebook_app_id">631960100321298</string>
+
 </resources>
