@@ -33,6 +33,8 @@ public class TaskListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_task_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //boolean b = this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
 
         lv = (ListView)findViewById(R.id.task_listview);
         List<String> arrlist = new ArrayList<String>();

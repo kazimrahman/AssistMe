@@ -11,7 +11,9 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.kazirahman.assistme.TaskListActivity"
-    tools:showIn="@layout/activity_task_list">
+    tools:showIn="@layout/activity_task_list"
+    android:textColor="#FFFFFF"
+    android:background="@drawable/blur3">
 
     <LinearLayout
         android:orientation="vertical"
@@ -19,11 +21,13 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:textColor="#FFFFFF">
 
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/task_listview"/>
+            android:id="@+id/task_listview"
+            android:textColor="#FFFFFF"/>
     </LinearLayout>
 </RelativeLayout>
