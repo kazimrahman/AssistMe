@@ -20,7 +20,7 @@ public class ChooseActivity extends AppCompatActivity {
     }
     public void goToFind(View view)
     {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, TaskListActivity.class);
         startActivity(intent);
     }
     public void goToCreate(View view)
