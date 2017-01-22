@@ -11,29 +11,23 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.kazirahman.assistme.CreateActivity"
-    tools:showIn="@layout/activity_create">
+    tools:showIn="@layout/activity_create"
+    android:background="@drawable/blurred">
 
     <CheckBox
-        android:text="cat6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="68dp"
-        android:id="@+id/cat6" />
-
-    <CheckBox
-        android:text="cat7"
+        android:text="Pet Care"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cat6"
+        android:textColor="#FFFFFF"
         android:layout_alignLeft="@+id/cat6"
         android:layout_alignStart="@+id/cat6"
         android:layout_marginTop="34dp"
         android:id="@+id/cat7" />
 
     <CheckBox
-        android:text="cat8"
+        android:text="Painting"
+        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cat7"
@@ -43,7 +37,8 @@
         android:id="@+id/cat8" />
 
     <CheckBox
-        android:text="cat9"
+        android:text="House Cleaning"
+        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cat8"
@@ -55,6 +50,7 @@
     <TextView
         android:text="Select the categories that match your task"
         android:layout_width="wrap_content"
+        android:textColor="#FFFFFF"
         android:layout_height="wrap_content"
         android:id="@+id/select_text"
         android:layout_alignParentTop="true"
@@ -70,5 +66,16 @@
         android:layout_below="@+id/cat9"
         android:onClick="additionalInfo"
         android:layout_centerHorizontal="true" />
+
+    <CheckBox
+        android:text="Gardening"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:id="@+id/cat6"
+        android:layout_below="@+id/select_text"
+        android:layout_alignLeft="@+id/select_text"
+        android:layout_alignStart="@+id/select_text" />
 
 </RelativeLayout>
