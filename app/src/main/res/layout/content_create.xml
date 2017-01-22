@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_create"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.kazirahman.assistme.CreateActivity"
+    tools:showIn="@layout/activity_create">
+
+    <CheckBox
+        android:text="cat6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="68dp"
+        android:id="@+id/cat6" />
+
+    <CheckBox
+        android:text="cat7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cat6"
+        android:layout_alignLeft="@+id/cat6"
+        android:layout_alignStart="@+id/cat6"
+        android:layout_marginTop="34dp"
+        android:id="@+id/cat7" />
+
+    <CheckBox
+        android:text="cat8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cat7"
+        android:layout_alignLeft="@+id/cat7"
+        android:layout_alignStart="@+id/cat7"
+        android:layout_marginTop="43dp"
+        android:id="@+id/cat8" />
+
+    <CheckBox
+        android:text="cat9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cat8"
+        android:layout_alignLeft="@+id/cat8"
+        android:layout_alignStart="@+id/cat8"
+        android:layout_marginTop="42dp"
+        android:id="@+id/cat9" />
+
+    <TextView
+        android:text="Select the categories that match your task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/select_text"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp" />
+
+    <Button
+        android:text="NEXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:id="@+id/next_btn"
+        android:layout_below="@+id/cat9"
+        android:onClick="additionalInfo"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
