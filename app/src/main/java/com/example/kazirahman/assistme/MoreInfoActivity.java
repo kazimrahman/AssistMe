@@ -14,7 +14,7 @@ public class MoreInfoActivity extends AppCompatActivity {
     }
 
     public void onSubmit(View view){
-        Intent i = new Intent(this, CreateSuccessActivity.class);
+        Intent i = new Intent(this, NavActivity.class);
         startActivity(i);
 
     }
