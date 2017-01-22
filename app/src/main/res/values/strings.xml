@@ -23,5 +23,7 @@
         completions."
     </string>
     <string name="title_activity_task_list">TaskListActivity</string>
+    <string name="title_activity_accept">AcceptActivity</string>
+    <string name="title_activity_complete">CompleteActivity</string>
 
 </resources>
