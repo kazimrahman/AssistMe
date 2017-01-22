@@ -53,6 +53,23 @@ public class MainActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.text_view);
         callbackManager = CallbackManager.Factory.create();
         loginButton.setReadPermissions("public_profile","email","user_friends");
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String username = String.valueOf(logintxt.getText());
+                String pass = String.valueOf(password.getText());
+
+                if (username.equals("a") && pass.equals("a")){
+                    textView.setText("success");
+                    Intent i = new Intent(getApplicationContext(), ChooseActivity.class);
+                    startActivity(i);
+                }else{
+                    textView.setText("failure");
+
+                }
+            }
+        });
+
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
 
             @Override

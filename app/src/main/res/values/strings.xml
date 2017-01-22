@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">AssistMe</string>
     <string name="facebook_app_id">631960100321298</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_create">CreateActivity</string>
+    <string name="title_activity_find">FindActivity</string>
 
 </resources>
