@@ -45,7 +45,7 @@ public class TaskListActivity extends AppCompatActivity {
         //arrlist.add(new updateData().execute("http://192.168.42.70:1234/AssistMe/makeTask.php"));
         updateData ud = new updateData();
         try {
-            String response = ud.execute("http://192.168.42.135:1234/AssistMe/getTasks.php").get();
+            String response = ud.execute("http://192.168.42.82:1234/AssistMe/getTasks.php").get();
 
             if(response!= null) {
                 String[] responses = response.split("<br>");

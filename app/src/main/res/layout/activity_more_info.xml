@@ -22,22 +22,6 @@
         android:layout_marginTop="38dp"
         android:id="@+id/additional_text" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint = "Estimated time (in hours)"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:layout_marginTop="131dp"
-        android:id="@+id/estimated_time"
-        android:layout_below="@+id/additional_text"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="43dp"
-        android:layout_marginEnd="43dp" />
-
     <Button
         android:text="SUBMIT TASK"
         android:layout_width="wrap_content"
@@ -51,15 +35,29 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint = "Estimated time (in hours)"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:layout_marginTop="39dp"
+        android:id="@+id/estimated_time"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:layout_below="@+id/additional_text"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical|center" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
         android:hint="Additional Info"
-        android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:id="@+id/editText3"
-        android:layout_above="@+id/submit_task"
+        android:layout_marginTop="79dp"
+        android:layout_below="@+id/estimated_time"
         android:layout_alignLeft="@+id/estimated_time"
         android:layout_alignStart="@+id/estimated_time"
-        android:layout_marginBottom="35dp" />
+        android:gravity="center" />
 
 </RelativeLayout>

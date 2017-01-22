@@ -63,7 +63,8 @@
         <activity
             android:name=".CompleteActivity"
             android:label="@string/title_activity_complete"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SubmitFinishActivity"></activity>
     </application>
 
 </manifest>
