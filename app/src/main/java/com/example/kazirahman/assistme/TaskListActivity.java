@@ -38,14 +38,14 @@ public class TaskListActivity extends AppCompatActivity {
 
         lv = (ListView)findViewById(R.id.task_listview);
         List<String> arrlist = new ArrayList<String>();
-        arrlist.add("foo");
-        arrlist.add("boo");
+        //arrlist.add("foo");
+        //arrlist.add("boo");
 
         //executePost("http://192.168.42.70/AssistMe/getTasks.php", "");
         //arrlist.add(new updateData().execute("http://192.168.42.70:1234/AssistMe/makeTask.php"));
         updateData ud = new updateData();
         try {
-            String response = ud.execute("http://192.168.42.82:1234/AssistMe/getTasks.php").get();
+            String response = ud.execute("http://192.168.42.79:1234/AssistMe/getTasks.php").get();
 
             if(response!= null) {
                 String[] responses = response.split("<br>");

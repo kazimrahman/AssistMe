@@ -12,9 +12,11 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 
 public class MoreInfoActivity extends AppCompatActivity {
 
@@ -26,16 +28,10 @@ public class MoreInfoActivity extends AppCompatActivity {
 
     public void onSubmit(View view){
         //String resp = executePost("http://192.168.42.70:1234/AssistMe/makeTask.php", "description=blahblahblah");
-        StringBuilder makeTaskUrl = new StringBuilder();
-        makeTaskUrl.append("http://192.168.42.82:1234/AssistMe/makeTask.php");
-        makeTaskUrl.append("?");
-        makeTaskUrl.append("description=");
+
         TextView additionalInfo = (TextView)findViewById(R.id.editText3);
-        makeTaskUrl.append(additionalInfo.getText().toString());
-        System.out.println(makeTaskUrl);
-        String url = "http://192.168.42.82:1234/AssistMe/makeTask.php";
-        //new updateData().execute(url,"brrrr");
-        new updateData().execute(makeTaskUrl.toString());
+        String url = "http://192.168.42.79:1234/AssistMe/makeTask.php";
+        new updateData().execute(url, additionalInfo.getText().toString());
         //System.out.println("foo " + resp);
         Intent i = new Intent(this, SubmitFinishActivity.class);
         startActivity(i);
@@ -98,7 +94,12 @@ public class MoreInfoActivity extends AppCompatActivity {
                 conn = (HttpURLConnection) url.openConnection();
                 //conn.setRequestMethod("POST");
                 //conn.setRequestProperty("description" , params[1]);
-                //conn.setDoOutput(true);
+                String data = URLEncoder.encode("description", "UTF-8")
+                        + "=" + URLEncoder.encode(params[1], "UTF-8");
+                conn.setDoOutput(true);
+                OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
+                wr.write(data);
+                wr.flush();
                 //System.out.println(params[1]);
                 if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
                     InputStream is = conn.getInputStream();

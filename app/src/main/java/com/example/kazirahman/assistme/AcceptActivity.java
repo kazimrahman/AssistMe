@@ -36,7 +36,7 @@ public class AcceptActivity extends AppCompatActivity {
         String response = "";
         updateData ud = new updateData();
         try {
-            response = ud.execute("http://192.168.42.82:1234/AssistMe/getTasks.php").get();
+            response = ud.execute("http://192.168.42.202:1234/AssistMe/getTasks.php").get();
 
             if(response!= null) {
                 String[] responses = response.split("<br>");
