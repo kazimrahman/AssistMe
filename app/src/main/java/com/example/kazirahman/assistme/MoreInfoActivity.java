@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -12,7 +13,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -30,8 +30,9 @@ public class MoreInfoActivity extends AppCompatActivity {
         //String resp = executePost("http://192.168.42.70:1234/AssistMe/makeTask.php", "description=blahblahblah");
 
         TextView additionalInfo = (TextView)findViewById(R.id.editText3);
-        String url = "http://192.168.42.79:1234/AssistMe/makeTask.php";
-        new updateData().execute(url, additionalInfo.getText().toString());
+        EditText estimatedTime = (EditText) findViewById(R.id.estimated_time);
+        String url = "http://192.168.42.16:1234/AssistMe/makeTask.php";
+        new updateData().execute(url, additionalInfo.getText().toString(), estimatedTime.getText().toString());
         //System.out.println("foo " + resp);
         Intent i = new Intent(this, SubmitFinishActivity.class);
         startActivity(i);
@@ -95,11 +96,23 @@ public class MoreInfoActivity extends AppCompatActivity {
                 //conn.setRequestMethod("POST");
                 //conn.setRequestProperty("description" , params[1]);
                 String data = URLEncoder.encode("description", "UTF-8")
-                        + "=" + URLEncoder.encode(params[1], "UTF-8");
+                        + "=" + URLEncoder.encode(params[1], "UTF-8") + "&"+
+                        URLEncoder.encode("duration", "UTF-8")
+                        + "=" + URLEncoder.encode(params[2], "UTF-8");
+                System.out.println("foo " + data);
+
+                byte[] postDataBytes = data.toString().getBytes("UTF-8");
+                //int    postDataLength = data.length;
                 conn.setDoOutput(true);
-                OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
-                wr.write(data);
-                wr.flush();
+
+                conn.setRequestMethod("POST");
+                conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                conn.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
+                conn.setDoOutput(true);
+                conn.getOutputStream().write(postDataBytes);
+                //OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
+                //wr.write(data);
+                //wr.flush();
                 //System.out.println(params[1]);
                 if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
                     InputStream is = conn.getInputStream();
