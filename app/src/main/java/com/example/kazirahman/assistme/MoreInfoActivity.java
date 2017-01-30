@@ -31,7 +31,7 @@ public class MoreInfoActivity extends AppCompatActivity {
 
         TextView additionalInfo = (TextView)findViewById(R.id.editText3);
         EditText estimatedTime = (EditText) findViewById(R.id.estimated_time);
-        String url = "http://192.168.42.16:1234/AssistMe/makeTask.php";
+        String url = ((assistMeConstants)this.getApplication()).geturl()+"makeTask.php";
         new updateData().execute(url, additionalInfo.getText().toString(), estimatedTime.getText().toString());
         //System.out.println("foo " + resp);
         Intent i = new Intent(this, SubmitFinishActivity.class);

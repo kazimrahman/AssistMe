@@ -38,6 +38,7 @@ public class TaskListActivity extends AppCompatActivity {
 
         lv = (ListView)findViewById(R.id.task_listview);
         List<String> arrlist = new ArrayList<String>();
+        final List<String> TaskIDs = new ArrayList<>();
         //arrlist.add("foo");
         //arrlist.add("boo");
 
@@ -45,11 +46,15 @@ public class TaskListActivity extends AppCompatActivity {
         //arrlist.add(new updateData().execute("http://192.168.42.70:1234/AssistMe/makeTask.php"));
         updateData ud = new updateData();
         try {
-            String response = ud.execute("http://192.168.42.16:1234/AssistMe/getTasks.php").get();
+            String response = ud.execute(((assistMeConstants)this.getApplication()).geturl()+"getTasks.php").get();
 
             if(response!= null) {
                 String[] responses = response.split("<br>");
                 arrlist.addAll(Arrays.asList(responses));
+            }
+            for(int i = 0; i<arrlist.size(); i++) {
+                String[] task = arrlist.get(i).split(":");
+                TaskIDs.add(task[0]);
             }
             //arrlist.add(response);
         } catch (InterruptedException e) {
@@ -73,7 +78,9 @@ public class TaskListActivity extends AppCompatActivity {
                 //String buttonText = b.getText().toString();
                 Intent intent = new Intent(getApplicationContext(), AcceptActivity.class);
                 //intent.putExtra("task", buttonText);
+                intent.putExtra("taskId", TaskIDs.get(i));
                 startActivity(intent);
+
             }
         });
 
